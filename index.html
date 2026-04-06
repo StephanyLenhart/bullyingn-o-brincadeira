@@ -245,6 +245,29 @@
             color: #b86f2c;
         }
 
+        /* ESPAÇO PARA BANNER */
+        .banner-space {
+            margin: 2rem 0;
+            min-height: 120px;
+            background: transparent;
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        
+        /* Classe opcional para quando o banner for inserido via ferramenta externa */
+        .banner-space.has-banner {
+            background: transparent;
+            padding: 0;
+        }
+        
+        /* Exemplo visual de placeholder vazio (opcional, não interfere) */
+        .banner-placeholder-tip {
+            display: none;
+        }
+
         /* LISTA DE PONTOS IMPORTANTES */
         .important-list {
             background: #eef3f1;
@@ -418,6 +441,9 @@
             .divider {
                 display: none;
             }
+            .banner-space {
+                min-height: 100px;
+            }
         }
     </style>
 </head>
@@ -497,6 +523,24 @@
         </div>
         <p style="margin-top: 2rem; text-align: center; background: #ffe3cf; padding: 1rem; border-radius: 60px; font-weight: 500;">🔍 "A brincadeira diverte a todos, enquanto o bullying humilha para dar prazer ao agressor." — Telavita</p>
     </div>
+
+    <!-- ESPAÇO DEDICADO PARA BANNER (antes da seção "Pontos que você precisa saber") -->
+    <!-- =================================================================== -->
+    <!--                                                                     -->
+    <!--  BANNER SPACE: insira aqui qualquer banner (imagem, HTML, iframe)   -->
+    <!--  Exemplo: <img src="seu-banner.jpg" alt="Banner Campanha" style="width:100%; border-radius:28px;">  -->
+    <!--  ou código de anúncio / componente de terceiros.                    -->
+    <!--                                                                     -->
+    <!-- =================================================================== -->
+    <div class="banner-space" id="customBannerSpace">
+        <!-- Espaço reservado para banner. 
+             Você pode inserir seu banner diretamente aqui, por exemplo: 
+             <img src="https://exemplo.com/banner-anti-bullying.jpg" alt="Diga não ao bullying" style="width:100%; border-radius:28px; display:block;"> 
+             Ou scripts de redes de anúncio, conteúdo dinâmico etc. -->
+        <!-- O espaço está vazio propositalmente, sem alterar nada do layout original. 
+             Basta adicionar o conteúdo desejado dentro desta div. -->
+    </div>
+    <!-- FIM DO ESPAÇO PARA BANNER -->
 
     <!-- PONTOS IMPORTANTES SOBRE O BULLYING (com mais detalhes) -->
     <div id="consequencias" class="important-list">
@@ -589,11 +633,11 @@
             }
         });
     });
-    // também para o botão que está fora? O botão do modal não interfere. E o botão "FALE COM APOIO" já abre modal, sem conflito.
-    // corrigir: se algum link interno foi adicionado manualmente, já tratamos. o btn denuncia não tem href, ok.
-    // bônus: efeito de pequeno alerta de conscientização no console? não precisa.
+    
+    // Opcional: Se quiser adicionar um exemplo dinâmico de que o espaço está disponível (sem interferir)
+    // Não adicionamos nada para manter exatamente o layout original. 
+    // A div .banner-space está 100% pronta para receber qualquer banner externo.
 </script>
 
-<!-- mensagem sutil de acessibilidade e boas práticas -->
 </body>
 </html>
