@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>BULLYING: Conscientização e Combate | Respeito é a Lei</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Roboto', sans-serif;
+            background: linear-gradient(145deg, #f9f7f3 0%, #f0ede8 100%);
+            color: #1e2a2e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVEGAÇÃO */
+        .navbar {
+            background: #0b2b26;
+            backdrop-filter: blur(2px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .logo h1 {
+            color: #f4e9d8;
+            font-size: 1.7rem;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #f4e9d8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #e9b35f;
+            color: #ffdd99;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(120deg, #163a32 0%, #1e4a3b 100%);
+            color: white;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            border-bottom: 5px solid #e9b35f;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 1.8rem;
+            opacity: 0.95;
+        }
+
+        .hero-badge {
+            background: #e9b35f;
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: bold;
+            color: #0b2b26;
+            font-size: 0.9rem;
+        }
+
+        /* CONTAINER GERAL */
+        .container {
+            max-width: 1300px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* CARDS DE DESTAQUE */
+        .highlight-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2rem 1.8rem;
+            flex: 1 1 280px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 8px solid;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 40px -15px rgba(0,0,0,0.2);
+        }
+
+        .card-legal { border-left-color: #c44536; }
+        .card-cyber { border-left-color: #2c6e9e; }
+        .card-consequencias { border-left-color: #b3772e; }
+        .card-combate { border-left-color: #3d8f7a; }
+
+        .card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: #1e3a3a;
+        }
+
+        .card p {
+            color: #2d3e42;
+            margin-bottom: 1rem;
+        }
+
+        .badge-lei {
+            background: #c44536;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* SEÇÃO PRINCIPAL COM DIFERENÇA BULLYING VS BRINCADEIRA */
+        .diff-section {
+            background: #fffaf2;
+            border-radius: 40px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #f0e2cf;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #0b2b26;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title span {
+            background: #e9b35f;
+            padding: 0 0.8rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            vertical-align: middle;
+            margin-left: 0.7rem;
+        }
+
+        .comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .comp-box {
+            flex: 1;
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            text-align: center;
+            transition: all 0.2s;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+        }
+
+        .comp-box.bullying {
+            border-top: 6px solid #c44536;
+        }
+        .comp-box.brincadeira {
+            border-top: 6px solid #4c9f8c;
+        }
+
+        .comp-box h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .comp-box p {
+            font-size: 1.05rem;
+            margin-top: 0.8rem;
+        }
+
+        .divider {
+            font-size: 2rem;
+            font-weight: bold;
+            align-self: center;
+            color: #b86f2c;
+        }
+
+        /* LISTA DE PONTOS IMPORTANTES */
+        .important-list {
+            background: #eef3f1;
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .important-list h3 {
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grid-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .point {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .point-emoji {
+            font-size: 2rem;
+        }
+
+        .point strong {
+            color: #0f4c3a;
+            font-size: 1.2rem;
+        }
+
+        /* DENÚNCIA E ACOLHIMENTO */
+        .cta-denuncia {
+            background: linear-gradient(135deg, #0b2b26, #1b4e44);
+            border-radius: 40px;
+            padding: 2.5rem;
+            text-align: center;
+            color: white;
+            margin: 3rem 0;
+        }
+
+        .cta-denuncia h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-denuncia {
+            background: #e9b35f;
+            color: #0b2b26;
+            border: none;
+            padding: 0.9rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 60px;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn-denuncia:hover {
+            background: #ffcd7e;
+            transform: scale(1.02);
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal {
+            background: #fffdf9;
+            max-width: 500px;
+            width: 90%;
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 30px 40px rgba(0,0,0,0.3);
+            transform: scale(0.9);
+            transition: transform 0.2s;
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal h4 {
+            font-size: 1.8rem;
+            color: #c44536;
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .close-modal {
+            background: #0b2b26;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            margin-top: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0b2b26;
+            color: #cfd8d6;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #e9b35f;
+            text-decoration: none;
+        }
+
+        @media (max-width: 780px) {
+            .navbar {
+                padding: 1rem;
+            }
+            .nav-container {
+                flex-direction: column;
+            }
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .comp-box h4 {
+                font-size: 1.4rem;
+            }
+            .divider {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <span class="logo-icon">🛡️</span>
+            <h1>RespeitoReal</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#diferenca">Bullying x Brincadeira</a></li>
+            <li><a href="#consequencias">Impactos</a></li>
+            <li><a href="#denuncia">Denuncie</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <span class="hero-badge">LEI 14.811/2024 • CRIME</span>
+        <h2>Bullying: violência que marca para sempre</h2>
+        <p>Não é "frescura", nem fase. É agressão repetitiva que destrói a saúde mental e pode levar ao isolamento. <strong>Brincadeira diverte a todos, bullying humilha.</strong></p>
+    </div>
+</header>
+
+<div class="container">
+    <!-- CARDS DE INFORMAÇÃO RÁPIDA -->
+    <div class="highlight-grid">
+        <div class="card card-legal">
+            <div class="card-icon">⚖️</div>
+            <h3>Lei 14.811/2024</h3>
+            <p>Bullying e cyberbullying agora são <strong>crimes</strong> no Brasil. Penas que vão de multa a reclusão, dependendo da gravidade e do meio (especialmente contra crianças e adolescentes).</p>
+            <span class="badge-lei">vigente desde 2024</span>
+        </div>
+        <div class="card card-cyber">
+            <div class="card-icon">💻📱</div>
+            <h3>Cyberbullying</h3>
+            <p>Agressões virtuais: humilhação em redes, grupos, divulgação de montagens, exposição íntima. A Lei 14.811 pune com rigor o assédio online.</p>
+        </div>
+        <div class="card card-consequencias">
+            <div class="card-icon">🧠💔</div>
+            <h3>Consequências sérias</h3>
+            <p>Ansiedade, depressão, baixa autoestima, ideação suicida, evasão escolar. As marcas psicológicas podem durar décadas.</p>
+        </div>
+        <div class="card card-combate">
+            <div class="card-icon">🤝📢</div>
+            <h3>Combate é dever de todos</h3>
+            <p>Testemunhar e silenciar é ser conivente. Acolha a vítima, interrompa o ciclo e denuncie às autoridades ou à escola.</p>
+        </div>
+    </div>
+
+    <!-- SEÇÃO DIFERENÇA CRUCIAL -->
+    <div id="diferenca" class="diff-section">
+        <h2 class="section-title">🎭 Bullying <span>NÃO É</span> brincadeira</h2>
+        <div class="comparison">
+            <div class="comp-box bullying">
+                <h4>🚨 BULLYING</h4>
+                <p>❌ Intencional e repetitivo<br>
+                ❌ Desequilíbrio de poder<br>
+                ❌ Humilha, causa sofrimento<br>
+                ❌ A vítima se sente isolada<br>
+                ❌ Gera medo, trauma, baixa autoestima<br>
+                ⚠️ <strong>Crime</strong> desde 2024</p>
+            </div>
+            <div class="divider">🔁</div>
+            <div class="comp-box brincadeira">
+                <h4>😄 BRINCADEIRA SAUDÁVEL</h4>
+                <p>✔️ Mútua, todos se divertem<br>
+                ✔️ Sem intenção de ferir<br>
+                ✔️ Respeita limites<br>
+                ✔️ Fortalece laços<br>
+                ✔️ Não gera exclusão ou dor<br>
+                🌟 Leve e consensual</p>
+            </div>
+        </div>
+        <p style="margin-top: 2rem; text-align: center; background: #ffe3cf; padding: 1rem; border-radius: 60px; font-weight: 500;">🔍 "A brincadeira diverte a todos, enquanto o bullying humilha para dar prazer ao agressor." — Telavita</p>
+    </div>
+
+    <!-- PONTOS IMPORTANTES SOBRE O BULLYING (com mais detalhes) -->
+    <div id="consequencias" class="important-list">
+        <h3><span>⚠️</span> Pontos que você precisa saber</h3>
+        <div class="grid-points">
+            <div class="point"><span class="point-emoji">📉</span><div><strong>Ansiedade & Baixa autoestima</strong><br>Vítimas internalizam críticas, sentem-se indignas, desenvolvem transtornos.</div></div>
+            <div class="point"><span class="point-emoji">🏫</span><div><strong>Medo de ir à escola</strong><br>O ambiente escolar se torna hostil, prejudicando o aprendizado e o convívio social.</div></div>
+            <div class="point"><span class="point-emoji">🗣️</span><div><strong>Apelidos ofensivos + exclusão</strong><br>Chacotas constantes, isolamento proposital, espalhar boatos e agressões físicas.</div></div>
+            <div class="point"><span class="point-emoji">📲</span><div><strong>Assédio online (cyberbullying)</strong><br>Mensagens anônimas, perfis falsos, difamação — o bullying 24/7 dentro de casa.</div></div>
+            <div class="point"><span class="point-emoji">🆘</span><div><strong>Vítima não deve "superar sozinha"</strong><br>Ninguém é obrigado a aguentar calado. Acolhimento e rede de apoio são fundamentais.</div></div>
+            <div class="point"><span class="point-emoji">👊</span><div><strong>Silêncio é cumplicidade</strong><br>Se você presencia bullying, intervenha, chame um adulto responsável, denuncie.</div></div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO COMBATE COM DESTAQUE -->
+    <div style="background: #fef3e2; border-radius: 32px; padding: 1.8rem; margin: 2rem 0;">
+        <h3 style="color:#1e4a3b; margin-bottom: 1rem; display: flex; gap: 10px;">🧡 O que fazer se sofrer ou testemunhar bullying?</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between;">
+            <div style="flex:1; min-width: 180px;">✅ <strong>Registre tudo</strong> (prints, áudios, testemunhas)</div>
+            <div style="flex:1; min-width: 180px;">📞 <strong>Denuncie</strong> à direção escolar, conselho tutelar ou polícia</div>
+            <div style="flex:1; min-width: 180px;">🤗 <strong>Acolha</strong> a vítima: ouça sem julgar, mostre apoio</div>
+            <div style="flex:1; min-width: 180px;">⚖️ <strong>Lei 14.811</strong> garante medidas protetivas e punições</div>
+        </div>
+    </div>
+
+    <!-- BOTÃO DENUNCIAR MODAL -->
+    <div id="denuncia" class="cta-denuncia">
+        <h3>📢 Você não está sozinho(a)</h3>
+        <p>Se você sofre bullying ou conhece alguém que esteja passando por isso, procure ajuda. Calar-se só fortalece o agressor.<br><strong>Denuncie anonimamente ou peça orientação.</strong></p>
+        <button class="btn-denuncia" id="openModalBtn">🛡️ FALE COM APOIO →</button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 - Conscientização sobre Bullying | Baseado na Lei 14.811/2024 | Respeito é um direito de todos.</p>
+    <p>Em caso de emergência, disque 100 (Direitos Humanos) ou 180. Busque o Conselho Tutelar da sua cidade. 💙</p>
+    <p style="margin-top: 0.5rem;">Site informativo - "Bullying não é brincadeira, é crime. Acolha, denuncie, transforme."</p>
+</footer>
+
+<!-- MODAL DE APOIO/ORIENTAÇÃO -->
+<div id="modalApoio" class="modal-overlay">
+    <div class="modal">
+        <span style="font-size: 2.5rem;">🆘</span>
+        <h4>Você merece respeito!</h4>
+        <p><strong>Canais oficiais de denúncia e acolhimento:</strong><br>
+        📞 <strong>Disque 100</strong> - Violações de direitos humanos<br>
+        📞 <strong>Ligue 180</strong> - Central de Atendimento à Mulher (caso de violência de gênero associada)<br>
+        🏫 Conselho Tutelar mais próximo<br>
+        💻 <strong>SaferNet</strong> (denúncias de cyberbullying) - www.safernet.org.br<br>
+        🧠 Procure psicólogos ou serviço de assistência social escolar.
+        </p>
+        <p style="background:#f0e2cf; border-radius: 2rem; padding: 0.5rem;">Você não precisa passar por isso sozinho. Acolhimento é fundamental.</p>
+        <button class="close-modal" id="closeModalBtn">Fechar</button>
+    </div>
+</div>
+
+<script>
+    // Modal de denúncia e apoio
+    const modal = document.getElementById('modalApoio');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    // clicar no overlay também fecha
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // suavizar links internos
+    document.querySelectorAll('.nav-links a, .hero .btn-denuncia, .cta-denuncia .btn-denuncia').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+    // também para o botão que está fora? O botão do modal não interfere. E o botão "FALE COM APOIO" já abre modal, sem conflito.
+    // corrigir: se algum link interno foi adicionado manualmente, já tratamos. o btn denuncia não tem href, ok.
+    // bônus: efeito de pequeno alerta de conscientização no console? não precisa.
+</script>
+
+<!-- mensagem sutil de acessibilidade e boas práticas -->
+</body>
+</html>
